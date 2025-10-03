@@ -45,4 +45,14 @@ public class Empleado {
                 ", salario_base=" + salario_base +
                 '}';
     }
+
+    public double obtener_salario(){
+        return salario_base;
+    }
+
+    public String info(){
+        return "ID:"+id+ " Nombre:"+nombre+ " Salario Base:"+ salario_base;
+    }
+
+
 }

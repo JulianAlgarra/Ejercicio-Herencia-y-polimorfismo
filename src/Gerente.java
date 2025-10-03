@@ -1,3 +1,4 @@
+
 public class Gerente extends Empleado{
 
     private double bono_fijo;
@@ -35,6 +36,30 @@ public class Gerente extends Empleado{
                 "bono_fijo=" + bono_fijo +
                 ", empleados_a_cargo=" + empleados_a_cargo +
                 '}';
+    }
+
+    public double incentivo_lidrazgo(){
+        double incentivo=0;
+        if (empleados_a_cargo>=10){
+            incentivo+=(salario_base*0.05);
+            return incentivo;
+        } else {
+            return incentivo;
+        }
+    }
+
+
+    @Override
+    public double obtener_salario(){
+        double salario_total;
+        salario_total= salario_base+ bono_fijo +incentivo_lidrazgo();
+        return salario_total;
+    }
+
+
+    @Override
+    public String info(){
+        return "Gerente   " +super.info()+ " Bono fijo:"+bono_fijo +" Empleados a cargo:"+empleados_a_cargo+" Salario Total:"+obtener_salario();
     }
 }
 

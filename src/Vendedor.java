@@ -1,3 +1,4 @@
+
 public class Vendedor extends Empleado{
 
     private double ventas_mensuales;
@@ -35,5 +36,30 @@ public class Vendedor extends Empleado{
                 ", porcentaje_comision=" + porcentaje_comision +
                 '}';
     }
+
+    public double bonificacion_meta(){
+        double bono=0;
+        if (ventas_mensuales>=5000000){
+            bono+= (0.1*ventas_mensuales);
+            return bono;
+        } else {
+            return bono;
+        }
+    }
+
+
+    @Override
+    public double obtener_salario(){
+        double salario_total;
+        salario_total= salario_base+(ventas_mensuales*(porcentaje_comision/100))+ bonificacion_meta();
+        return salario_total;
+    }
+
+    @Override
+    public String info(){
+        return "Vendedor   " + super.info() +" Ventas Mensuales:"+ventas_mensuales+" Porcentaje Comision:"
+                +porcentaje_comision+"%"+ " Salario Total:"+ obtener_salario();
+    }
+
 }
 
