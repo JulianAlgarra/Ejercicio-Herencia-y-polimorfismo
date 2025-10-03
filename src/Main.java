@@ -11,6 +11,7 @@ public class Main {
         List<Empleado>lstEmpleado =new ArrayList<>();
         int op = 9;
         while (op !=0){
+
             System.out.println("===Sistema de nomina Techmarket===");
             System.out.println("1. Registrar Vendedor");
             System.out.println("2. Registrar Gerente");
@@ -25,7 +26,7 @@ public class Main {
 
             switch (op){
                 case 0 :
-                    System.out.println("Saliendo....");
+                    System.out.println("Saliendo...");
                     break;
                 case 1:
                     System.out.print("ID: ");
