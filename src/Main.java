@@ -95,16 +95,29 @@ public class Main {
                     System.out.println("Ingrese el ID del empleado que desea buscar");
                     buscar = buscar_cuenta.next();
                     Empleado p;
-                    for (Empleado c :lstEmpleado){
+                    for (Empleado e :lstEmpleado){
                         if (lstEmpleado.isEmpty()){
                             System.out.println("No hay ninguna cuenta");
-                        }else if (c.getId().equalsIgnoreCase(buscar)){
-                            p=c;
+                        }else if (e.getId().equalsIgnoreCase(buscar)){
+                            p=e;
                             System.out.println("Empleado encontrado: "+p.info());
                         }
                     }
                     break;
                 case 8:
+                     System.out.println("Cantidad de empleados= "+ lstEmpleado.size());
+                     int vendedores=0;
+                     int gerentes=0;
+
+                     for (Empleado e :lstEmpleado){
+                         if(e instanceof Vendedor){
+                             vendedores++;
+                         } else if (e instanceof Gerente){
+                             gerentes++;
+                         }
+                     }
+                     System.out.println("La cantidad de gerentes es: "+ gerentes);
+                     System.out.println("La cantidad de vendedores es: " +vendedores);
                     break;
                 default:
                     System.out.println("Opcion incorrecta");
